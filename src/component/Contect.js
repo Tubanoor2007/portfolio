@@ -1,67 +1,80 @@
-import React from 'react'
-import styled from "styled-components";
+// src/components/Contact.js
+import React from 'react';
+import styled from 'styled-components';
 
-const Section = styled.section`
-  padding: 4rem 2rem;
-  background-color: #f8f8f8;
+const ContactWrapper = styled.section`
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
 `;
 
-const Title = styled.h2`
-  text-align: center;
+const ContactHeading = styled.h2`
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
 `;
 
 const ContactForm = styled.form`
-  max-width: 600px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
 `;
 
 const Input = styled.input`
   padding: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
   font-size: 1rem;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: #f39c12;
+  }
 `;
 
 const TextArea = styled.textarea`
   padding: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
   font-size: 1rem;
+  border: 2px solid #3498db;
+  border-radius: 5px;
   resize: vertical;
+  outline: none;
+
+  &:focus {
+    border-color: #f39c12;
+  }
 `;
 
 const Button = styled.button`
   padding: 1rem;
-  background-color: #f39c12;
-  border: none;
-  border-radius: 8px;
+  background-color: #3498db;
   color: white;
-  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: background-color 0.3s;
+
   &:hover {
-    background-color: #e67e22;
+    background-color: #f39c12;
   }
 `;
 
-function Contect() {
+const Contact = () => {
   return (
-    <>
-    <Section id="contact">
-      <Title>Contact Me</Title>
+    <ContactWrapper id="contact">
+      <ContactHeading>Contact Me</ContactHeading>
       <ContactForm>
         <Input type="text" placeholder="Your Name" required />
         <Input type="email" placeholder="Your Email" required />
-        <TextArea placeholder="Your Message" rows="6" required />
+        <TextArea placeholder="Your Message" rows="5" required />
         <Button type="submit">Send Message</Button>
       </ContactForm>
-    </Section>
-    </>
-  )
-}
+    </ContactWrapper>
+  );
+};
 
-export default Contect
+export default Contact;

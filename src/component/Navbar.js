@@ -1,50 +1,98 @@
-import React from 'react'
-import styled from "styled-components";
-const NavbarContainer = styled.nav`
-  background-color: #333;
-  padding: 1rem 2rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+// src/components/Navbar.js
+// src/components/Navbar.js
+import React from 'react';
+import styled from 'styled-components';
+
+// Styled Components for Navbar
+const NavbarWrapper = styled.nav`
+  background: #2c3e50;
   color: white;
-  font-size: 1.1rem;
-`;
-
-const Logo = styled.h1`
-  font-size: 1.5rem;
-`;
-
-const NavLinks = styled.ul`
-  list-style: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 1000;
   display: flex;
-  gap: 2rem;
+  justify-content: space-around;
+  align-items: center;
 `;
 
-const NavLink = styled.li`
-  cursor: pointer;
+const NavLink = styled.a`
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+
   &:hover {
     color: #f39c12;
   }
 `;
 
-function navbar() {
+const Navbar = () => {
   return (
-    <>
-     <NavbarContainer>
-      <Logo>My Portfolio</Logo>
-      <NavLinks>
-        <NavLink>Home</NavLink>
-        <NavLink>Projects</NavLink>
-        <NavLink>Contact</NavLink>
-      </NavLinks>
-    </NavbarContainer>
-    </>
-  )
-}
+    <NavbarWrapper>
+      <NavLink href="#home">Home</NavLink>
+      <NavLink href="#about">About Us</NavLink> {/* Added About Us link */}
+      <NavLink href="#projects">Projects</NavLink>
+      <NavLink href="#contact">Contact</NavLink>
+    </NavbarWrapper>
+  );
+};
 
-export default navbar
+export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import styled from 'styled-components';
+
+// const NavbarWrapper = styled.nav`
+//   background: #2c3e50;
+//   color: white;
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   padding: 1rem 2rem;
+//   z-index: 1000;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+// `;
+
+// const NavLink = styled.a`
+//   color: white;
+//   text-decoration: none;
+//   font-size: 1.2rem;
+//   font-weight: bold;
+
+//   &:hover {
+//     color: #f39c12;
+//   }
+// `;
+
+// const Navbar = () => {
+//   return (
+//     <NavbarWrapper>
+//       <NavLink href="#home">Home</NavLink>
+//       <NavLink href="#projects">Projects</NavLink>
+//       <NavLink href="#contact">Contact</NavLink>
+//     </NavbarWrapper>
+
+//   );
+// };
+
+// export default Navbar;

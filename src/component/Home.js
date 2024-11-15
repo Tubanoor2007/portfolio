@@ -1,43 +1,46 @@
-import React from 'react'
-import styled from "styled-components";
-import Image from '../asset/imagess.avif';
+// src/components/Home.js
+import React from 'react';
+import styled from 'styled-components';
+import homeBg from '../asset/tr.jpg'; 
 
-
-const HomeSection = styled.section`
+const HomeWrapper = styled.section`
+  background-image: url(${homeBg});
+  background-size: cover;
+  background-position: center;
   height: 100vh;
-  background: url(${(props) => props.bgImage}) center/cover no-repeat;
+  padding-top: 80px; /* Space for fixed Navbar */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
-  background-position: center;
-  background-size: cover;
-  padding: 0 2rem;
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
 `;
 
-function Home() {
+const Heading = styled.h1`
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+`;
+
+const Description = styled.p`
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+`;
+
+const Home = () => {
   return (
-   <>
+    <HomeWrapper id="home">
+      <Heading>Welcome to My Portfolio</Heading>
+      <Description>
+        I'm a passionate web developer who loves building creative and responsive web experiences.
+      </Description>
+    </HomeWrapper>
+  );
+};
 
-<HomeSection bgImage={Image}>
-      <div>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Check out my work below!</p>
-      </div>
-    </HomeSection>
- 
+export default Home;
 
-   </>
-  )
-}
-
-export default Home
