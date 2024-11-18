@@ -1,5 +1,6 @@
 // src/components/Navbar.js
 // src/components/Navbar.js
+// Navbar.js
 import React from 'react';
 import styled from 'styled-components';
 
@@ -32,16 +33,16 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <NavLink href="#home">Home</NavLink>
-      <NavLink href="#about">About Us</NavLink> {/* Added About Us link */}
+      <NavLink href="#about">About Us</NavLink>
+      <NavLink href="#skills">Skills</NavLink>
       <NavLink href="#projects">Projects</NavLink>
+
       <NavLink href="#contact">Contact</NavLink>
     </NavbarWrapper>
   );
 };
 
 export default Navbar;
-
-
 
 
 
